@@ -4,11 +4,13 @@ from .models import (
     # Event,
     Staff,
     Speaker,
-    Sponsor
+    Sponsor,
+    Attendee,
 )
 
 # admin.site.register(Event)
 admin.site.register(Staff)
 admin.site.register(Speaker)
 admin.site.register(Sponsor)
+admin.site.register(Attendee)
 
