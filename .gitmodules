@@ -1,0 +1,3 @@
+[submodule "ted-react-version"]
+	path = ted-react-version
+	url = git@gitlab.com:reza.hasani7899/ted-react-version.git
