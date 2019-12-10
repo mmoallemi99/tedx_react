@@ -5,6 +5,8 @@ from .models import (
     Staff,
     Speaker,
     Sponsor,
+    Attendee,
+
 )
 
 
@@ -53,6 +55,13 @@ class SponsorSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Sponsor
+        fields = '__all__'
+
+
+class AttendeeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Attendee
         fields = '__all__'
 
 

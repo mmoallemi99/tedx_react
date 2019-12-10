@@ -7,6 +7,7 @@ from .views import (
     StaffViewSet,
     SpeakerViewSet,
     SponsorViewSet,
+    AttendeeCreateAPIView,
 )
 
 app_name = 'api'
@@ -19,5 +20,7 @@ router.register(r'sponsors', SponsorViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('register/', AttendeeCreateAPIView.as_view()),
+
     # path('', EventViewSet.as_view, name='event'),
 ]

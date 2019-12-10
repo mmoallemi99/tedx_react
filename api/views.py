@@ -1,16 +1,18 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 from events.serializers import (
     # EventSerializer,
     StaffSerializer,
     SpeakerSerializer,
     SponsorSerializer,
+    AttendeeSerializer,
 )
 from events.models import (
     # Event,
     Staff,
     Speaker,
     Sponsor,
+    Attendee,
 )
 
 
@@ -49,3 +51,7 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Sponsor.objects.all()
     serializer_class = SponsorSerializer
 
+
+class AttendeeCreateAPIView(generics.CreateAPIView):
+    queryset = Attendee.objects.all()
+    serializer_class = AttendeeSerializer

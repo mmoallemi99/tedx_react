@@ -111,3 +111,19 @@ class Sponsor(models.Model):
 
     def __str__(self):
         return self.sponsor_organization
+
+
+class Attendee(models.Model):
+    full_name = models.CharField(max_length=60)
+    email = models.EmailField(max_length=254)
+    phone_number = PhoneNumberField()
+    career = models.CharField(max_length=100)
+    degree = models.CharField(max_length=100)
+    school = models.CharField(max_length=100)
+    study = models.CharField(max_length=100)
+    start = models.SmallIntegerField()
+    end = models.SmallIntegerField()
+    before_tedxes = models.TextField(max_length=400)
+    what_made_you = models.TextField(max_length=400)
+    how_familiar = models.TextField(max_length=400)
+    expects = models.TextField(max_length=400)
