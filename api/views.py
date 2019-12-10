@@ -1,4 +1,4 @@
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, permissions
 
 from events.serializers import (
     # EventSerializer,
@@ -55,3 +55,4 @@ class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
 class AttendeeCreateAPIView(generics.CreateAPIView):
     queryset = Attendee.objects.all()
     serializer_class = AttendeeSerializer
+    permission_classes = [permissions.AllowAny, ]
