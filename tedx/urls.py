@@ -31,8 +31,6 @@ urlpatterns = [
 
     # http://localhost:8000/
     path('', TemplateView.as_view(template_name='main.html')),
-
-
 ]
 
 if settings.DEBUG:
