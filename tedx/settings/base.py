@@ -123,7 +123,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static/'
+STATIC_ROOT = 'front_end/static/'
 STATICFILES_DIR = (
     os.path.join(BASE_DIR, 'front_end/static/')
 )
