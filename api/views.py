@@ -24,6 +24,8 @@ from events.models import (
 class StaffViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
+    permission_classes = []
+    authentication_classes = []
 
 
 class SpeakerViewSet(viewsets.ReadOnlyModelViewSet):
@@ -50,9 +52,12 @@ class SpeakerViewSet(viewsets.ReadOnlyModelViewSet):
 class SponsorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Sponsor.objects.all()
     serializer_class = SponsorSerializer
+    permission_classes = []
+    authentication_classes = []
 
 
 class AttendeeCreateAPIView(generics.CreateAPIView):
     queryset = Attendee.objects.all()
     serializer_class = AttendeeSerializer
-    permission_classes = [permissions.AllowAny, ]
+    permission_classes = []
+    authentication_classes = []
