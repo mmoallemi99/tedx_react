@@ -29,8 +29,12 @@ urlpatterns = [
     # http://localhost:8000/api/<router-viewsets>
     path('api/', include('api.urls', namespace='api')),
 
+    path('volunteer/', include('volunteer.urls')),
+
+
     # http://localhost:8000/
     re_path(r'^(?:.*)/?$', TemplateView.as_view(template_name='main.html')),
+
 ]
 
 if settings.DEBUG:

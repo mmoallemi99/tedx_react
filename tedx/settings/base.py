@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Project Apps
     'events',
     'api',
+    'volunteer',
 ]
 
 MIDDLEWARE = [
