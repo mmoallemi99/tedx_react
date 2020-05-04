@@ -45,10 +45,11 @@ class SpeakerVolunteer(viewsets.ViewSetMixin, generics.CreateAPIView):
 
         full name of speaker: {}
         speaker's email: {}
+        speaker's number: {}
         idea : {}
 
 
-        """.format(data.get('S-full name'), data.get('S-email'), data.get('S-idea'))
+        """.format(data.get('S-full name'), data.get('S-email'), data.get('number'), data.get('S-idea'))
         message = None
         if data.get('verb') == 'introduce':
             message = introduce_speaker
