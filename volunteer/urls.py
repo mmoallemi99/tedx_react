@@ -1,9 +1,8 @@
 from rest_framework.routers import DefaultRouter
+from django.urls import path
 
 from .views import SpeakerVolunteer
 
-router = DefaultRouter()
-
-router.register(r'speaker', SpeakerVolunteer, basename='speaker_volunteer')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path(r'speaker/', SpeakerVolunteer.as_view())
+]
