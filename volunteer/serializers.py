@@ -3,8 +3,7 @@ import smtplib,ssl
 
 
 class SendMailFromSpeakerSerializer(serializers.Serializer):
-    firstname = serializers.CharField(max_length=30, required=False)
-    lastname = serializers.CharField(max_length=30, required=False)
+    full_name = serializers.CharField(max_length=30, required=False)
     email = serializers.EmailField(required=False)
     phone_number = serializers.CharField(max_length=30, required=False)
     S_fullname = serializers.CharField(max_length=30, required=False)
@@ -14,7 +13,7 @@ class SendMailFromSpeakerSerializer(serializers.Serializer):
     number = serializers.CharField(max_length=30, required=False)
     verb = serializers.CharField(max_length=30, required=False)
     class Meta:
-        fields = ('firstname', 'lastname', 'email', 'phone_number', 'S_fullname', 'S_email', 'S_reason', 'S_idea',
+        fields = ('full_name', 'email', 'phone_number', 'S_fullname', 'S_email', 'S_reason', 'S_idea',
                   'number', 'verb')
     def validate(self, attrs):
         if attrs.get('verb') != 'introduce' and attrs.get('verb') != 'be':
@@ -33,8 +32,7 @@ class SendMailFromSpeakerSerializer(serializers.Serializer):
                 Subject: test for speaker volunteer's
                 hi lovely organizer :)
                 some one introduce a speaker
-                first name: {}
-                last name: {}
+                full name: {}
                 email: {}
                 phone number: {}
                 full name of speaker: {}
@@ -44,7 +42,7 @@ class SendMailFromSpeakerSerializer(serializers.Serializer):
 
 
 
-                """.format(data.get('firstname'), data.get('lastname'), data.get('email'), data.get('phone_number'),
+                """.format(data.get('full_name'), data.get('email'), data.get('phone_number'),
                            data.get('S_fullname'), data.get('S_email'), data.get('S_reason'), data.get('S_idea'))
         be_speaker = """
 
