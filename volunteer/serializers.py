@@ -56,7 +56,7 @@ class SendMailFromSpeakerSerializer(serializers.Serializer):
                 idea : {}
 
 
-                """.format(data.get('S_full name'), data.get('S_email'), data.get('number'), data.get('S_idea'))
+                """.format(data.get('S_fullname'), data.get('S_email'), data.get('number'), data.get('S_idea'))
         message = None
         if data.get('verb') == 'introduce':
             message = introduce_speaker
